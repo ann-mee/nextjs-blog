@@ -1,9 +1,9 @@
-import classes from "./post.module.css";
+import classes from "./post-item.module.css";
 import Link from "next/link";
 import Image from "next/image";
 
-export default function Post({ post }) {
-  const { title, date, excerpt, slug, image } = post;
+export default function PostItem({ post }) {
+  const { title, date, excerpt, slug } = post;
 
   const formattedDate = new Date(date).toLocaleDateString("en-US", {
     day: "numeric",
@@ -16,7 +16,7 @@ export default function Post({ post }) {
       <Link href={`/posts/${slug}`}>
         <div className={classes.image}>
           <Image
-            src="/images/hero.jpg"
+            src="/images/post.jpg"
             alt={title}
             width={300}
             height={200}
