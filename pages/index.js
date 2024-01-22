@@ -1,35 +1,24 @@
 import Hero from "@/components/home-page/hero";
-import FeaturedPosts from "@/components/posts/featured-posts";
+import Posts from "@/components/posts/posts";
+import { getFeaturedPosts } from "@/helpers/api-posts";
 
-const posts = [
-  {
-    title: "Title 1",
-    slug: "title-1",
-    image: "",
-    excerpt: "Excerpt",
-    date: "2023-02-10",
-  },
-  {
-    title: "Title 2",
-    slug: "title-2",
-    image: "",
-    excerpt: "Excerpt",
-    date: "2023-02-10",
-  },
-  {
-    title: "Title 3",
-    slug: "title-3",
-    image: "",
-    excerpt: "Excerpt",
-    date: "2023-02-10",
-  },
-];
-
-export default function HomePage() {
+export default function HomePage({ posts }) {
   return (
     <div>
       <Hero />
-      <FeaturedPosts posts={posts} />
+      <div className="container">
+        <h2>Featured Posts</h2>
+      </div>
+      <Posts posts={posts} />
     </div>
   );
+}
+
+export async function getStaticProps() {
+  const posts = await getFeaturedPosts();
+
+  return {
+    props: { posts: posts },
+    revalidate: 1800,
+  };
 }

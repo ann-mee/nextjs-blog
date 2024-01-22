@@ -62,3 +62,9 @@ button {
   font: inherit;
   cursor: pointer;
 }
+
+.container{
+  width: 90%;
+  max-width: 80rem;
+  margin: var(--size-8) auto;
+}
