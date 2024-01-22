@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Hero from "@/components/home-page/hero";
 import Posts from "@/components/posts/posts";
 import { getFeaturedPosts } from "@/helpers/api-posts";
@@ -5,6 +6,9 @@ import { getFeaturedPosts } from "@/helpers/api-posts";
 export default function HomePage({ posts }) {
   return (
     <div>
+      <Head>
+        <title>Blog</title>
+      </Head>
       <Hero />
       <div className="container">
         <h2>Featured Posts</h2>
