@@ -20,11 +20,26 @@
 }
 
 @media (min-width: 768px) {
-.header ul {
-    gap: 0.5rem;
+    .header ul {
+        gap: 0.5rem;
+    }
+
+    .header a {
+        font-size: var(--size-5);
+    }
 }
 
-.header a {
-    font-size: var(--size-5);
+.header button {
+    font: inherit;
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    font-weight: bold;
+    padding: 0.5rem 1.5rem;
+    border-radius: 6px;
+    cursor: pointer;
 }
+.header button:hover {
+    background-color: #c291e2;
+    color: #38015c;
 }
